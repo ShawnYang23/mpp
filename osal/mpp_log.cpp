@@ -32,7 +32,7 @@
 extern "C" {
 #endif
 
-RK_U32 mpp_debug = 0;
+RK_U32 mpp_debug = 5;
 
 // TODO: add log timing information and switch flag
 static const char *msg_log_warning = "log message is long\n";

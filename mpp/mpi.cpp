@@ -28,7 +28,7 @@
 #include "mpi_impl.h"
 #include "mpp_info.h"
 
-RK_U32 mpi_debug = 0;
+RK_U32 mpi_debug = 6;
 
 typedef struct {
     MppCtxType      type;
@@ -411,14 +411,13 @@ static MppApi mpp_api = {
 
 MPP_RET mpp_create(MppCtx *ctx, MppApi **mpi)
 {
-    mpp_env_get_u32("mpi_debug", &mpi_debug, 0);
+    // mpp_env_get_u32("mpi_debug", &mpi_debug, 0);
     mpp_get_log_level();
-
+    
     if (NULL == ctx || NULL == mpi) {
         mpp_err_f("invalid input ctx %p mpi %p\n", ctx, mpi);
         return MPP_ERR_NULL_PTR;
     }
-
     *ctx = NULL;
     *mpi = NULL;
 
